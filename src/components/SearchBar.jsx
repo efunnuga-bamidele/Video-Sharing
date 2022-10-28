@@ -1,7 +1,23 @@
-export default function SearchBar(){
+import { useState } from 'react'
+import { Paper, TextField } from '@material-ui/core'
+
+export default function SearchBar({ onSubmit }){
+    const [searchTerm, setSearchTerm] = useState('')
+
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter"){
+            onSubmit(searchTerm)
+        }
+    }
     return(
-        <div className="app">
-            <h1>Search Bar</h1>
-        </div>
+        <Paper elevation={6} style={{ padding: "25px"}}>
+            <TextField 
+                fullWidth
+                label = "Search..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyPress={handleKeyPress}
+            />
+        </Paper>
     )
 }
