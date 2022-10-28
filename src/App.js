@@ -40,7 +40,7 @@ function App() {
              <VideoDetail video = {selectedVideo} /> 
           </Grid>
           <Grid item xs={4}>
-              <VideoList videos= {videos} />
+              <VideoList videos= {videos} onVideoSelect = {setSelectedVideo}/>
           </Grid>
         </Grid>
       </Grid>

@@ -10,7 +10,7 @@ export default function VideoDetail({ video: {id: {videoId}, snippet: {title, ch
         {!videoId && <div>Loading...</div>}
         {videoId &&
             <>
-            <Paper elevation={6} style={{height: "80%"}}>
+            <Paper elevation={6} style={{height: "40%"}}>
             <iframe 
                 frameBorder="0"
                 height="100%"
